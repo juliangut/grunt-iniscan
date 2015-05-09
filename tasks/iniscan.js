@@ -36,27 +36,21 @@ module.exports = function(grunt) {
 
     if (config.path !== undefined && !grunt.file.exists(config.path)) {
       grunt.verbose.error();
-      grunt.log.warn('Source file ' + config.path + ' not found.');
-
-      return false;
+      grunt.fail.warn('Source file ' + config.path + ' not found.');
     }
 
     if (config.threshold !== undefined) {
       config.threshold = config.threshold.replace(/^\s+|\s+$/g, '').toUpperCase();
 
-      if (!['WARNING', 'ERROR', 'FATAL'].indexOf(config.threshold)) {
+      if (['WARNING', 'ERROR', 'FATAL'].indexOf(config.threshold) === -1) {
         grunt.verbose.error();
         grunt.fail.warn('Threshold level ' + config.threshold + ' is not valid.');
-
-        return false;
       }
     }
 
     if (config.php !== undefined && !/^[0-9]+((\.[0-9]+)?\.[0-9]+)?$/.test(config.php)) {
       grunt.verbose.error();
       grunt.fail.warn('PHP version ' + config.php + ' is not valid.');
-
-      return false;
     }
 
     config.format = config.format.replace(/^\s+|\s+$/g, '').toLowerCase();
@@ -64,8 +58,6 @@ module.exports = function(grunt) {
     if (['console', 'html', 'json', 'xml'].indexOf(config.format) === -1) {
       grunt.verbose.error();
       grunt.fail.warn('Format ' + config.format + ' is not supported.');
-
-      return false;
     }
 
     if (config.output !== undefined) {
@@ -74,14 +66,10 @@ module.exports = function(grunt) {
       if (!grunt.file.exists(config.output)) {
         grunt.verbose.error();
         grunt.fail.warn('Output directory ' + config.output + ' not found.');
-
-        return false;
       }
       if (!grunt.file.isPathInCwd(config.output)) {
         grunt.verbose.error();
         grunt.fail.warn('Cannot output to a directory outside the current working directory.');
-
-        return false;
       }
     }
 
@@ -123,7 +111,7 @@ module.exports = function(grunt) {
         }
 
         grunt.file.write(outputFile, stdout);
-        grunt.log.warn('Generating output file ' + outputFile);
+        grunt.log.write('Generating output file ' + outputFile);
       }
 
       return done();
