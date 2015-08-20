@@ -103,8 +103,8 @@ module.exports = function(grunt) {
         var outputFile = config.output + '/iniscan-output' + (config.format !== 'console' ? '.' + config.format : '');
 
         if (config.format === 'html') {
-          var files = grunt.file.expand({ filter: 'isFile', cwd: config.output }, ['iniscan-output-+([0-9]).html']);
-          var generatedFile = config.output + '/' + files[files.length -1];
+          var date = (new Date()).toISOString().split('T')[0].replace(new RegExp('-', 'g'), '');
+          var generatedFile = config.output + '/iniscan-output-' + date + '.html';
 
           stdout = grunt.file.read(generatedFile);
           grunt.file.delete(generatedFile);
