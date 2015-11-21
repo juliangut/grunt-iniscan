@@ -1,4 +1,9 @@
-# grunt-iniscan
+[![Latest Version](https://img.shields.io/npm/v/grunt-iniscan.svg?style=flat-square)](https://npmjs.org/package/grunt-iniscan)
+[![License](https://img.shields.io/github/license/juliangut/grunt-iniscan.svg?style=flat-square)](https://github.com/juliangut/grunt-iniscan/blob/master/LICENSE)
+
+[![Total Downloads](https://img.shields.io/npm/dt/grunt-iniscan.svg?style=flat-square)](https://npmjs.org/package/grunt-iniscan)
+
+# iniscan Grunt plugin
 
 > Grunt plugin for running [iniscan](https://github.com/psecio/iniscan)
 
@@ -107,12 +112,10 @@ grunt.initConfig({
 
 ## Contributing
 
-Found a bug or have a feature request? [Please open a new issue](https://github.com/juliangut/grunt-iniscan/issues). Have a look at existing issues before
+Found a bug or have a feature request? [Please open a new issue](https://github.com/juliangut/grunt-iniscan/issues). Have a look at existing issues before.
 
 See file [CONTRIBUTING.md](https://github.com/juliangut/grunt-iniscan/blob/master/CONTRIBUTING.md)
 
 ## License
 
-### Release under BSD-3-Clause License.
-
-See file [LICENSE](https://github.com/juliangut/grunt-iniscan/blob/master/LICENSE) included with the source code for a copy of the license terms
+See file [LICENSE](https://github.com/juliangut/grunt-iniscan/blob/master/LICENSE) included with the source code for a copy of the license terms.
