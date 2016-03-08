@@ -2,7 +2,7 @@
  * grunt-iniscan
  * https://github.com/juliangut/grunt-iniscan
  *
- * Copyright (c) 2015 Julián Gutiérrez (juliangut@gmail.com)
+ * Copyright (c) 2016 Julián Gutiérrez (juliangut@gmail.com)
  * Licensed under the BSD-3-Clasue license.
  */
 
@@ -12,7 +12,6 @@ var path = require('path');
 var exec = require('child_process').exec;
 
 module.exports = function(grunt) {
-
   var attributes = {
     path: 'path',
     threshold: 'threshold',
@@ -117,5 +116,4 @@ module.exports = function(grunt) {
       return done();
     });
   });
-
 };
